@@ -1,0 +1,294 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 85%; /* Slightly wider container for better use of space */
+    max-width: 1100px; /* Limit maximum width */
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Header Styles (Hero Section) */
+header {
+    background: #333; /* Fallback color if image fails */
+    /* Replace 'https://via.placeholder.com/1920x600/2c3e50/ecf0f1?text=Your+Professional+Hero+Image' with your actual hero image URL */
+    background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Example: professional tech setup */
+    background-size: cover; /* Ensures the image covers the entire header */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    color: #fff;
+    padding-top: 20px;
+    min-height: 350px; /* Make header taller for hero effect */
+    border-bottom: #77aaff 3px solid;
+    display: flex; /* Use flexbox for content alignment */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* Needed for the overlay */
+}
+
+/* Overlay for better text readability on hero image */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1; /* Place overlay above background */
+}
+
+header h1, header nav {
+    position: relative;
+    z-index: 2; /* Ensure text and nav are above overlay */
+}
+
+header h1 {
+    margin: 0 0 20px 0;
+    font-size: 3.5em; /* Larger title */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Subtle text shadow */
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header li {
+    display: inline;
+    padding: 0 18px; /* Slightly more spacing */
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+}
+
+header a:hover {
+    color: #aaddff; /* Lighter blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Section Styling */
+section {
+    padding: 60px 0; /* More vertical padding for sections */
+    border-bottom: 1px solid #e0e0e0; /* Subtle separator between sections */
+}
+
+section:last-of-type {
+    border-bottom: none; /* No border for the last section */
+}
+
+.hero {
+    background: #fdfdfd; /* White background for the about section */
+    text-align: center;
+    padding-top: 40px;
+}
+
+.section-bg {
+    background: #e9eff5; /* Light blue background for alternating sections */
+}
+
+h2 {
+    color: #2c3e50; /* Darker blue for headings */
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+h3 {
+    color: #34495e; /* Slightly lighter dark blue for subheadings */
+    margin-top: 25px;
+    font-size: 1.8em;
+}
+
+/* About Me Section Specific */
+#about p {
+    font-size: 1.15em;
+    max-width: 900px;
+    margin: 15px auto;
+    color: #555;
+}
+
+/* Profile Image (Optional - Uncomment in HTML if you use it) */
+.profile-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%; /* Makes it round */
+    border: 6px solid #77aaff;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: block; /* To center it with margin auto */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Education Section Specific */
+.education-item {
+    background: #fdfdfd;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-left: 6px solid #77aaff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.education-item p {
+    margin: 5px 0 0 0;
+    font-size: 1.05em;
+    color: #666;
+}
+
+/* Project Section Specific */
+.project-item {
+    background: #fdfdfd;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.project-item h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.6em;
+}
+
+.project-item p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.project-item a {
+    color: #77aaff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+.project-item a:hover {
+    text-decoration: underline;
+    color: #5588cc;
+}
+
+/* Contact Section Specific */
+#contact p {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+#contact a {
+    color: #77aaff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.15em;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+    color: #5588cc;
+}
+
+/* Footer Styles */
+footer {
+    background: #2c3e50; /* Dark blue background */
+    /* Replace 'https://via.placeholder.com/1920x100/34495e/ecf0f1?text=Subtle+Footer+Pattern' with a subtle texture or pattern */
+    background-image: url('https://images.unsplash.com/photo-1510915364895-abef9b2ab3c6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Example: subtle code background */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    position: relative; /* For overlay */
+}
+
+/* Footer Overlay */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Darker overlay for text contrast */
+    z-index: 1;
+}
+
+footer p {
+    position: relative;
+    z-index: 2; /* Text above overlay */
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    header {
+        min-height: 250px;
+        padding-top: 15px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }
+
+    header nav ul li {
+        display: block;
+        padding: 8px 0;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    #about p, #contact p, .education-item p, .project-item p {
+        font-size: 1em;
+    }
+
+    .education-item, .project-item {
+        padding: 20px;
+    }
+}
